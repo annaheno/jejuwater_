@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://www.mybatis.org/dtd/mybatis-3-mapper.dtd" >
+  
+  <mapper namespace="very.cute.mapper.AdminMapper">
+  <insert id="register">
+		insert into t_notice (bno, title, content) values (#{bno},#{title},#{content})
+	</insert>
+	
+	<select id="list" resultType="very.cute.domain.AdminVO">
+	select bno, title, content, regdate, viewcnt from t_notice order by bno desc
+	</select>
+	
+	<select id="read" resultType="very.cute.domain.AdminVO">
+	select * from t_notice where bno = #{bno}
+	</select>
+	
+	<update id="modify">
+	update t_notice set title=#{title}, content=#{content}, regdate = now() where bno=#{bno}
+	</update>
+	
+	<delete id="delete">
+	delete from t_notice where bno=#{bno}
+	</delete>
+  </mapper>

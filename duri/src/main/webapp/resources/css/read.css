@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+form {margin-top : 100px;}
+table {border: none; border-collapse: collapse;}
+.title{width : 1000px; text-align: center; color :#000; font-size : 30px;}
+.content {padding : 20px;}

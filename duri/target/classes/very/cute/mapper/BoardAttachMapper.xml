@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://www.mybatis.org/dtd/mybatis-3-mapper.dtd" > 
+  
+  <mapper namespace="very.cute.mapper.BoardAttachMapper">
+  
+  <insert id="insert">
+  insert into t_attach
+  values (#{uuid},#{uploadPath},#{fileName},#{fileType},#{bno})
+  </insert>
+  
+  <delete id="delete">
+  delete from t_attach where bno = #{bno}
+  </delete>
+  <select id="select" resultType="very.cute.domain.BoardAttachVO">
+  select * from t_attach where bno=#{bno}
+  </select>
+  </mapper>

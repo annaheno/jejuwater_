@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+#main_wrap {position: relative; margin-top: 80px; }
+.item_order {width : 100%; margin : 0 auto;}
+.item_box {width : 1200px; height : 500px; display : flex; justify-content: space-between;}
+/* 수동 슬라이드 */
+#gallery {position : relative; display: inline-block; width: 350px; margin: 30px auto;}
+#gallery img {width: 100%;}
+#photo {text-align: center;}
+#gallery ul {width: 350px; margin: 0 auto; overflow: hidden;}
+#photo_list {width: 300px; margin: 10px auto; overflow: hidden;}
+#photo_list ul li { width: 60px; float: left; text-align: center; border : 1px solid grey; margin-left: 30px;}
+
+/* 주문 영역 */
+.item_list {position: relative; display: inline-block; width: 500px; height : 350px;}
+/* 무료배송 */
+.free_d {color: #00aa91; width: 50px; height: 20px; line-height: 20px; text-align: center; 
+font-size: 12px; border-radius: 10px; background: #e4f5ec; margin-bottom : 10px;}
+/* 제주용암수 */
+.item_tit {font-size: 24px; color : #000; padding-bottom : 20px; font-weight: bold; border-bottom : 3px solid #000;}
+/* 제품리스트 */
+.items {width : 150px; padding : 15px 0 15px;}
+/* 제품 수량 카운팅 */
+.itemcount_wrap {position : relative; top : -164px;  left : 20px; margin : 0 auto; width : 270px; }
+.item_count input[type='text']{width: 30px; text-align: center; border: none; padding-left : 5px;}
+.item_count input[type="button"]{position: relative; width: 25px; border : none; background: #fff; font-size: 20px;}
+.item_count {display:block; text-align:center; width : 120px; margin : 19px; border : 1px solid #000;}
+/* 가격 */
+#price {position : relative; left : 200px; color:#000; font-weight: 800; text-align: right;}
+#price0, #price1, #price2 {display: none;}
+/* 총 가격 */
+#itemcount {position : relative; top : -140px; width : 500px; height : 20px; display:inline-block; margin-bottom: 15px; color : #000; font-size : 20px;}
+#totalPrice {font-weight: bold; font-size : 24px; float:right;}
+
+/* 주문버튼 */
+.buttonbox {margin-top : 50px; display : flex; justify-content: center;}
+.order {width: 150px; color: #fff; border : 1px solid #00aa91;  font-size : 16px;
+font-weight: bold; border-radius: 10px; height: 50px; background : #00aa91; margin-right : 10px;}
+.gift {width: 150px; height: 50px; border-radius:10px; border : 1px solid #000; background: #fff; font-size : 16px;}
+.item_info {text-align: center;}

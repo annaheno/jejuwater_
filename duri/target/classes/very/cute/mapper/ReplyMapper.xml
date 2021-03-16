@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="very.cute.mapper.ReplyMapper">
+  <select id="list" resultType="very.cute.domain.ReplyVO">
+  select rno, bno, replytext, replyer, regdate, updatedate from (
+  select @rownum:=@rownum+1 as rownum, b.*
+  from (select @rownum:=0) as tmp, t_reply as b
+  where bno=#{bno}
+  order by rno desc 
+  ) as boardList
+  <![CDATA[
+  where rownum > (#{cri.pageNum}-1)*#{cri.amount}
+  and rownum <= #{cri.pageNum}*#{cri.amount}
+  ]]>
+  </select>
+  
+  <select id="getCountByBno" resultType="int">
+  	select count(*) from t_reply where bno = #{bno}
+  </select>
+  
+  <select id="listPaging" resultType="very.cute.domain.ReplyVO">
+  select rno, bno, replytext, replyer, regdate, updatedate from (
+  select @rownum:=@rownum+1 as rownum, b.*
+  from (select @rownum:=0) as tmp, t_reply as b
+  where bno=#{bno}
+   order by bno desc 
+   ) as boardList
+   <![CDATA[
+  where rownum > (#{cri.pageNum}-1)*#{cri.amount}
+  and rownum <= #{cri.pageNum}*#{cri.amount}
+  ]]>
+  </select>
+  
+  <insert id="create">
+  insert into t_reply (bno, replytext, replyer)
+  values (#{bno},#{replytext},#{replyer})
+  </insert>
+  
+  <update id="update">
+  update t_reply
+  set replytext=#{replytext},
+  updatedate=now()
+  where rno=#{rno}
+  </update>
+  
+  <delete id="delete">
+  delete from t_reply where rno=#{rno}
+  </delete>
+  </mapper>

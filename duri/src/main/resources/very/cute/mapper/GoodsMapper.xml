@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="very.cute.mapper.GoodsMapper">
+  
+  <select id="list" resultType="very.cute.domain.GoodsVO">
+  select gno, gname, price from t_goods order by gno
+  </select> 
+  
+    <select id="item" resultType="very.cute.domain.GoodsVO">
+  select * from t_goods where gno = #{gno}
+  </select> 
+  
+    <insert id="addCart">
+  insert into t_cart (cno, userid, gno,cstock) values (#{cno}, #{userid}, #{gno},#{cstock})
+  </insert>
+  
+  <select id="cartList" resultType="very.cute.domain.CartListVO">
+  select row_number() over(order by c.cno desc) as num,
+	c.cno, c.userid, c.gno, c.cstock, c.addDate, 
+	g.gname, g.price
+	from t_cart c 
+	inner join t_goods g 
+	on c.gno = g.gno 
+	where c.userid = #{userid}
+  </select>
+  
+  <delete id="deleteCart">
+  delete from t_cart where cno = #{cno} and userid = #{userid}
+  </delete>
+  </mapper>

@@ -1,0 +1,42 @@
+ input:focus {outline:none;}
+ 
+/*  회원가입 영역*/
+.join {position: relative; width: 550px; height: auto;  padding:20px; margin:0 auto; margin-top : 100px; }
+.join p{text-align: center; margin-bottom: 20px; padding: 15px; font-size: 25px;}
+
+/*  정보 입력 공간*/
+label {color:#000;}
+.info {border : 1px solid #BDBDBD; height: 70px; margin-top:-1px;} 
+.info:nth-child(5) {height: 80px; margin-top : -2px;}
+
+/* 주소 */
+.info:nth-child(6) {height: 95px; margin-top : 1px;}
+.tit:nth-child(6) {height: 95px; line-height : 95px; background: red;}
+.addressbox {display : inline-block; width : 400px; height : 95px; padding : 20px;}
+#zipcode {text-indent : 0px; width : 100px; border : 1px solid #666666; text-align: center;}
+#address1, #address2 {display : inline-block; width : 200px; border-bottom : 1px solid #666666; }
+#address2 {width : 300px; margin-top : 3px;}
+.tit {width : 100px; display : inline-block; height: 60px; line-height: 70px; font-size: 14px; padding-left:10px;}
+input[type="text"],input[type="password"]{width: 300px; height: 30px; font-size : 14px;}
+input::placeholder{padding-left: 10px;}
+input {text-indent: 10px; border : none;}
+
+/* 유효성 검사 메시지 */
+ #remsg, #pwmsg, #idmsg {font-size : 13px; color : red; position : relative; display: inline-block; width : 350px; left : 115px; 
+ bottom:22px; height: 30px;}
+ 
+/*  체크 디자인 (성별)*/
+input[type="radio"]{display:none;}
+input[type="radio"]:checked +label{display:inline-block; width: 120px; height:40px; color:#fff; margin-left: 10px;
+    background: #00aa91; text-align: center; font-size: 14px; margin-top:20px; margin-bottom: 20px;}
+input[type="radio"]+label{display:inline-block; width: 120px; height:40px; line-height:40px;  margin-left: 10px;
+    color:#fff; cursor: pointer; background: #BDBDBD; text-align: center; font-size: 14px; margin-top:20px; margin-bottom: 20px;}
+
+/*  전화번호 */
+#number{margin-bottom:20px;}
+
+/*  회원가입 버튼*/
+#btn{position : relative; display : block; margin :15px auto 0 auto; text-align: center; width : 300px;}
+#joinbtn,#cbtn {width:100px; height:40px; border-radius: 38px; font-size: 14px; border: none; padding-right : 10px;} 
+#cbtn{border : 1px solid  #6E6E6E; margin-right : 10px;}
+#joinbtn{background-color: #00aa91; color : #fff;}
